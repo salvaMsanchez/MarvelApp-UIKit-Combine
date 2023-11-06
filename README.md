@@ -79,6 +79,12 @@ Siguiendo las indicaciones del citado Robert Cecil Martin, experto ingeniero de 
 <a name="mejoras"></a>
 # Algunos aspectos en los que seguir mejorando la aplicación
 
+
+* Hablar sobre las nestedContainer en el modelo
+* Hbalar sobre combine en UIkit y escucha de estados
+* Hbalar sobre la aplicación del repositorio y el caso de uso para la llamada a la API
+
+
 # Inspiración
 
 * [MARVEL APP PROTOTYPE](https://dribbble.com/shots/2671572-Marvel-App/attachments/537660?mode=media)

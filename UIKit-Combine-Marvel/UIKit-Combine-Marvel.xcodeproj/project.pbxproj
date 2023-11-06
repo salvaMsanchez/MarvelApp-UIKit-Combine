@@ -19,6 +19,14 @@
 		B44587D42AF8198500ED2004 /* Extension+URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44587D32AF8198500ED2004 /* Extension+URLResponse.swift */; };
 		B44587D72AF840DC00ED2004 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B44587D62AF840DC00ED2004 /* Lottie */; };
 		B44587D92AF843A600ED2004 /* marvelSplashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B44587D82AF843A600ED2004 /* marvelSplashAnimation.json */; };
+		B44587DB2AF8532500ED2004 /* APIClientUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44587DA2AF8532500ED2004 /* APIClientUseCase.swift */; };
+		B44587DD2AF8537F00ED2004 /* APIClientRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44587DC2AF8537F00ED2004 /* APIClientRepository.swift */; };
+		B44587DF2AF853D100ED2004 /* APIClientRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44587DE2AF853D100ED2004 /* APIClientRepositoryProtocol.swift */; };
+		B44587E52AF857CD00ED2004 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44587E42AF857CD00ED2004 /* CharacterTableViewCell.swift */; };
+		B44587E72AF857EA00ED2004 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44587E62AF857EA00ED2004 /* CharactersViewController.swift */; };
+		B44587E92AF8587F00ED2004 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44587E82AF8587F00ED2004 /* CharactersViewModel.swift */; };
+		B44587EC2AF863D900ED2004 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B44587EB2AF863D900ED2004 /* Kingfisher */; };
+		B44587EE2AF875D900ED2004 /* marvelCharactersAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B44587ED2AF875D900ED2004 /* marvelCharactersAnimation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +43,13 @@
 		B44587D12AF808F300ED2004 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		B44587D32AF8198500ED2004 /* Extension+URLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLResponse.swift"; sourceTree = "<group>"; };
 		B44587D82AF843A600ED2004 /* marvelSplashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = marvelSplashAnimation.json; sourceTree = "<group>"; };
+		B44587DA2AF8532500ED2004 /* APIClientUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientUseCase.swift; sourceTree = "<group>"; };
+		B44587DC2AF8537F00ED2004 /* APIClientRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientRepository.swift; sourceTree = "<group>"; };
+		B44587DE2AF853D100ED2004 /* APIClientRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientRepositoryProtocol.swift; sourceTree = "<group>"; };
+		B44587E42AF857CD00ED2004 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		B44587E62AF857EA00ED2004 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		B44587E82AF8587F00ED2004 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		B44587ED2AF875D900ED2004 /* marvelCharactersAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = marvelCharactersAnimation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44587EC2AF863D900ED2004 /* Kingfisher in Frameworks */,
 				B44587D72AF840DC00ED2004 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				B44587BB2AF7EF2100ED2004 /* Splash */,
+				B44587E02AF8579000ED2004 /* Characters */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -171,6 +188,7 @@
 		B44587C62AF7F00B00ED2004 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				B44587DA2AF8532500ED2004 /* APIClientUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -186,6 +204,7 @@
 		B44587C82AF7F03B00ED2004 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				B44587DE2AF853D100ED2004 /* APIClientRepositoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -208,6 +227,7 @@
 		B44587CB2AF7F09900ED2004 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				B44587DC2AF8537F00ED2004 /* APIClientRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -216,8 +236,43 @@
 			isa = PBXGroup;
 			children = (
 				B44587D82AF843A600ED2004 /* marvelSplashAnimation.json */,
+				B44587ED2AF875D900ED2004 /* marvelCharactersAnimation.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		B44587E02AF8579000ED2004 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				B44587E32AF857C100ED2004 /* View */,
+				B44587E22AF857B600ED2004 /* ViewController */,
+				B44587E12AF857B000ED2004 /* ViewModel */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		B44587E12AF857B000ED2004 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B44587E82AF8587F00ED2004 /* CharactersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B44587E22AF857B600ED2004 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B44587E62AF857EA00ED2004 /* CharactersViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B44587E32AF857C100ED2004 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B44587E42AF857CD00ED2004 /* CharacterTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +293,7 @@
 			name = "UIKit-Combine-Marvel";
 			packageProductDependencies = (
 				B44587D62AF840DC00ED2004 /* Lottie */,
+				B44587EB2AF863D900ED2004 /* Kingfisher */,
 			);
 			productName = "UIKit-Combine-Marvel";
 			productReference = B445879F2AF7EC7400ED2004 /* UIKit-Combine-Marvel.app */;
@@ -269,6 +325,7 @@
 			mainGroup = B44587962AF7EC7400ED2004;
 			packageReferences = (
 				B44587D52AF840DC00ED2004 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				B44587EA2AF863D900ED2004 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = B44587A02AF7EC7400ED2004 /* Products */;
 			projectDirPath = "";
@@ -285,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B44587AF2AF7EC7500ED2004 /* LaunchScreen.storyboard in Resources */,
+				B44587EE2AF875D900ED2004 /* marvelCharactersAnimation.json in Resources */,
 				B44587AC2AF7EC7500ED2004 /* Assets.xcassets in Resources */,
 				B44587D92AF843A600ED2004 /* marvelSplashAnimation.json in Resources */,
 			);
@@ -299,12 +357,18 @@
 			files = (
 				B44587D42AF8198500ED2004 /* Extension+URLResponse.swift in Sources */,
 				B44587C42AF7EFC300ED2004 /* SplashViewModel.swift in Sources */,
+				B44587E52AF857CD00ED2004 /* CharacterTableViewCell.swift in Sources */,
 				B44587A32AF7EC7400ED2004 /* AppDelegate.swift in Sources */,
 				B44587D22AF808F300ED2004 /* Character.swift in Sources */,
+				B44587DB2AF8532500ED2004 /* APIClientUseCase.swift in Sources */,
+				B44587DF2AF853D100ED2004 /* APIClientRepositoryProtocol.swift in Sources */,
 				B44587A52AF7EC7400ED2004 /* SceneDelegate.swift in Sources */,
+				B44587E92AF8587F00ED2004 /* CharactersViewModel.swift in Sources */,
 				B44587C02AF7EF5500ED2004 /* SplashView.swift in Sources */,
 				B44587C22AF7EF8200ED2004 /* SplashViewController.swift in Sources */,
 				B44587D02AF8059600ED2004 /* APIClient.swift in Sources */,
+				B44587DD2AF8537F00ED2004 /* APIClientRepository.swift in Sources */,
+				B44587E72AF857EA00ED2004 /* CharactersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +586,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		B44587EA2AF863D900ED2004 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -529,6 +601,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B44587D52AF840DC00ED2004 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		B44587EB2AF863D900ED2004 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B44587EA2AF863D900ED2004 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

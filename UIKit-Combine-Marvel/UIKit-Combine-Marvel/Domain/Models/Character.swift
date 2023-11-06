@@ -26,7 +26,7 @@ struct CharacterProperties: Codable {
     let name: String
     let description: String
 //    let modified: Date
-//    let thumbnail: Thumbnail
+    let thumbnail: Thumbnail
     let resourceURI: String
 //    let comics, series: Comics
 //    let stories: Stories
@@ -93,21 +93,21 @@ struct ComicsItem: Codable {
 //    case interiorStory = "interiorStory"
 //}
 //
-//// MARK: - Thumbnail
-//struct Thumbnail: Codable {
-//    let path: String
-//    let thumbnailExtension: Extension
+// MARK: - Thumbnail
+struct Thumbnail: Codable {
+    let path: String
+    let thumbnailExtension: Extension
+
+    enum CodingKeys: String, CodingKey {
+        case path
+        case thumbnailExtension = "extension"
+    }
+}
 //
-//    enum CodingKeys: String, CodingKey {
-//        case path
-//        case thumbnailExtension = "extension"
-//    }
-//}
-//
-//enum Extension: String, Codable {
-//    case gif = "gif"
-//    case jpg = "jpg"
-//}
+enum Extension: String, Codable {
+    case gif = "gif"
+    case jpg = "jpg"
+}
 //
 //// MARK: - URLElement
 //struct URLElement: Codable {

@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 final class SplashViewController: UIViewController {
     
     private let splashView = SplashView()
-    
-    let apiClient = APIClient()
-    let listCharacters: [String] = ["Iron Man", "Hulk", "Doctor Strange", "Thor", "Spider-Man (Peter Parker)", "Spider-Girl (May Parker)", "Captain America"]
-    var characters: [CharacterProperties] = []
+
+    private var subscriptions = Set<AnyCancellable>()
+    private var viewModel = SplashViewModel()
     
     override func loadView() {
         super.loadView()
@@ -23,29 +23,25 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().async { [weak self] in
-            let dispatchGroup = DispatchGroup()
-            self?.listCharacters.forEach { nameCharacter in
-                dispatchGroup.enter()
-                Task.init { [weak self] in
-                    defer {
-                        dispatchGroup.leave()
-                    }
-                    do {
-                        guard let character = try await self?.apiClient.getCharacter(by: nameCharacter, apiRouter: .getCharacter) else {
-                            return
-                        }
-                        self?.characters.append(contentsOf: character.character)
-                    } catch {
-                        print(error)
+        viewModel.$state
+            .sink { data in
+                DispatchQueue.main.async { [weak self] in
+                    switch data {
+                        case .none:
+                            print("Estado Splash .none")
+                        case .loading:
+                            print("Estado Splash .loading")
+                            self?.splashView.splashAnimationView.play()
+                        case .loaded:
+                            print("Estado Splash .loaded")
+                            self?.splashView.splashAnimationView.stop()
+                            let charactersViewController = CharactersViewController()
+                            self?.navigationController?.setViewControllers([charactersViewController], animated: true)
+                        case .error:
+                            print("Estado Splash .error")
                     }
                 }
             }
-            dispatchGroup.notify(queue: .main) {
-                print("Llamadas terminadas")
-            }
-        }
-        
+            .store(in: &subscriptions)
     }
-    
 }

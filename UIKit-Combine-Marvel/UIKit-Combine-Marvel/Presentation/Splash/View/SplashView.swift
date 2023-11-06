@@ -13,7 +13,7 @@ final class SplashView: UIView {
     public let splashAnimationView: LottieAnimationView = {
         let animation = LottieAnimationView(name: "marvelSplashAnimation")
         animation.loopMode = .loop
-        animation.play()
+//        animation.play()
         animation.translatesAutoresizingMaskIntoConstraints = false
         return animation
     }()
