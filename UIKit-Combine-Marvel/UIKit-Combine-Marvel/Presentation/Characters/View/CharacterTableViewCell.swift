@@ -17,7 +17,7 @@ final class CharacterTableViewCell: UITableViewCell {
     // MARK: - UI components -
     private let characterImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "ironman")
+//        imageView.image = UIImage(named: "ironman")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -90,6 +90,6 @@ final class CharacterTableViewCell: UITableViewCell {
     
     func configure(with model: CharacterProperties) {
         characterNameLabel.text = model.name
-//        characterImageView.kf.setImage(with: URL(string: model.thumbnail.path + ".jpg"))
+        characterImageView.kf.setImage(with: URL(string: model.thumbnail.path + ".jpg"))
     }
 }
