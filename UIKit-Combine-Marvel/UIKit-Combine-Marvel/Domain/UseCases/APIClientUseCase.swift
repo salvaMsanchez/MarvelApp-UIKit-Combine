@@ -10,6 +10,7 @@ import Foundation
 protocol APIClientUseCaseProtocol {
     var repository: APIClientRepositoryProtocol { get set }
     func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults
 }
 
 final class APIClientUseCase: APIClientUseCaseProtocol {
@@ -21,6 +22,10 @@ final class APIClientUseCase: APIClientUseCaseProtocol {
     
     func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character {
         try await repository.getCharacter(by: characterName, apiRouter: .getCharacter)
+    }
+    
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults {
+        try await repository.getSeries(by: characterId, apiRouter: .getSeries(characterId: characterId))
     }
 }
 

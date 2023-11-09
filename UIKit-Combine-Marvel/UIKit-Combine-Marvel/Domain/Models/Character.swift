@@ -26,7 +26,7 @@ struct CharacterProperties: Codable {
     let name: String
     let description: String
 //    let modified: Date
-    let thumbnail: Thumbnail
+    let thumbnail: CharacterThumbnail
     let resourceURI: String
 //    let comics, series: Comics
 //    let stories: Stories
@@ -58,19 +58,19 @@ struct Character: Decodable {
     }
 }
 
-// MARK: - Comics
-struct Comics: Codable {
-    let available: Int
-    let collectionURI: String
-    let items: [ComicsItem]
-    let returned: Int
-}
-
-// MARK: - ComicsItem
-struct ComicsItem: Codable {
-    let resourceURI: String
-    let name: String
-}
+//// MARK: - Comics
+//struct Comics: Codable {
+//    let available: Int
+//    let collectionURI: String
+//    let items: [ComicsItem]
+//    let returned: Int
+//}
+//
+//// MARK: - ComicsItem
+//struct ComicsItem: Codable {
+//    let resourceURI: String
+//    let name: String
+//}
 
 //// MARK: - Stories
 //struct Stories: Codable {
@@ -94,7 +94,7 @@ struct ComicsItem: Codable {
 //}
 //
 // MARK: - Thumbnail
-struct Thumbnail: Codable {
+struct CharacterThumbnail: Codable {
     let path: String
     let thumbnailExtension: Extension
 

@@ -16,22 +16,24 @@ struct Constants {
 
 protocol APIClientProtocol {
     func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults
 }
 
 // MARK: - APIRouter -
 enum APIRouter {
     case getCharacter
+    case getSeries(characterId: Int)
     
     var host: String {
         switch self {
-            case .getCharacter:
+            case .getCharacter, .getSeries:
                 return "gateway.marvel.com"
         }
     }
     
     var scheme: String {
         switch self {
-            case .getCharacter:
+            case .getCharacter, .getSeries:
                 return "https"
         }
     }
@@ -40,12 +42,14 @@ enum APIRouter {
         switch self {
             case .getCharacter:
                 return "/v1/public/characters"
+            case .getSeries(let characterId):
+                return "/v1/public/characters/\(characterId)/series"
         }
     }
     
     var method: String {
         switch self {
-            case .getCharacter:
+            case .getCharacter, .getSeries:
                 return "GET"
         }
     }
@@ -99,6 +103,45 @@ final class APIClient: APIClientProtocol {
         }
         
         guard let resource = try? JSONDecoder().decode(Character.self, from: data) else {
+            throw APIError.decodingFailed
+        }
+        
+        return resource
+    }
+    
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults {
+        var components = URLComponents()
+        components.host = apiRouter.host
+        components.scheme = apiRouter.scheme
+        components.path = apiRouter.path
+        
+        // Define los parámetros
+        let apiKeyItem = URLQueryItem(name: "apikey", value: Constants.apikey)
+        let tsItem = URLQueryItem(name: "ts", value: Constants.ts)
+        let hashItem = URLQueryItem(name: "hash", value: Constants.hash)
+
+        // Agrega los parámetros a la URL
+        components.queryItems = [apiKeyItem, tsItem, hashItem]
+        
+        guard let url = components.url else {
+            throw APIError.malformedUrl
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = apiRouter.method
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        let statusCode = response.getStatusCode()
+        guard statusCode == 200 else {
+            throw APIError.statusCode(code: statusCode)
+        }
+        
+        guard !data.isEmpty else {
+            throw APIError.noData
+        }
+        
+        guard let resource = try? JSONDecoder().decode(SerieResults.self, from: data) else {
             throw APIError.decodingFailed
         }
         

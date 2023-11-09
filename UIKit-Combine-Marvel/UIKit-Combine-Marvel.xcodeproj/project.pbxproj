@@ -10,6 +10,7 @@
 		B401A0E02AFCEAF500F2F454 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401A0DF2AFCEAF500F2F454 /* CharacterDetailView.swift */; };
 		B401A0E22AFCEB1800F2F454 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401A0E12AFCEB1800F2F454 /* CharacterDetailViewController.swift */; };
 		B401A0E42AFCEB4F00F2F454 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401A0E32AFCEB4F00F2F454 /* CharacterDetailViewModel.swift */; };
+		B401A0E62AFCEF9300F2F454 /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401A0E52AFCEF9300F2F454 /* Serie.swift */; };
 		B44587A32AF7EC7400ED2004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44587A22AF7EC7400ED2004 /* AppDelegate.swift */; };
 		B44587A52AF7EC7400ED2004 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44587A42AF7EC7400ED2004 /* SceneDelegate.swift */; };
 		B44587AC2AF7EC7500ED2004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44587AB2AF7EC7500ED2004 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		B401A0DF2AFCEAF500F2F454 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		B401A0E12AFCEB1800F2F454 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		B401A0E32AFCEB4F00F2F454 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		B401A0E52AFCEF9300F2F454 /* Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serie.swift; sourceTree = "<group>"; };
 		B445879F2AF7EC7400ED2004 /* UIKit-Combine-Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-Combine-Marvel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44587A22AF7EC7400ED2004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B44587A42AF7EC7400ED2004 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				B44587D12AF808F300ED2004 /* Character.swift */,
+				B401A0E52AFCEF9300F2F454 /* Serie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				B44587E52AF857CD00ED2004 /* CharacterTableViewCell.swift in Sources */,
 				B44587A32AF7EC7400ED2004 /* AppDelegate.swift in Sources */,
 				B401A0E22AFCEB1800F2F454 /* CharacterDetailViewController.swift in Sources */,
+				B401A0E62AFCEF9300F2F454 /* Serie.swift in Sources */,
 				B44587D22AF808F300ED2004 /* Character.swift in Sources */,
 				B44587DB2AF8532500ED2004 /* APIClientUseCase.swift in Sources */,
 				B44587DF2AF853D100ED2004 /* APIClientRepositoryProtocol.swift in Sources */,

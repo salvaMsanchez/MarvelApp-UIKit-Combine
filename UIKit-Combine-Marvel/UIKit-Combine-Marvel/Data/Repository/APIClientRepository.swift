@@ -8,7 +8,6 @@
 import Foundation
 
 final class APIClientRepository: APIClientRepositoryProtocol {
-    
     private var apiClient: APIClientProtocol
     
     init(apiClient: APIClientProtocol = APIClient()) {
@@ -17,5 +16,9 @@ final class APIClientRepository: APIClientRepositoryProtocol {
     
     func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character {
         try await apiClient.getCharacter(by: characterName, apiRouter: .getCharacter)
+    }
+    
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults {
+        try await apiClient.getSeries(by: characterId, apiRouter: .getSeries(characterId: characterId))
     }
 }

@@ -9,4 +9,5 @@ import Foundation
 
 protocol APIClientRepositoryProtocol {
     func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults
 }
