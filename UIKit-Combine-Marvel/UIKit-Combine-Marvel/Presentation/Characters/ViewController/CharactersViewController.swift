@@ -79,6 +79,7 @@ final class CharactersViewController: UIViewController {
         charactersTableView.frame = view.bounds
     }
     
+    // MARK: - Functions -
     private func setup() {
         addViews()
         applyConstraints()
@@ -108,6 +109,15 @@ final class CharactersViewController: UIViewController {
         NSLayoutConstraint.activate(charactersAnimationViewConstraints)
     }
     
+    private func onCharacterCellPressed(model: CharacterProperties) {
+        let characterDetailViewController = CharacterDetailViewController()
+        characterDetailViewController.viewModel = CharacterDetailViewModel(character: model)
+        DispatchQueue.global().asyncAfter(deadline: .now() + .milliseconds(200)) { [weak self] in
+            DispatchQueue.main.async {
+                self?.navigationController?.pushViewController(characterDetailViewController, animated: true)
+            }
+        }
+    }
 }
 
 extension CharactersViewController: UITableViewDataSource, UITableViewDelegate {
@@ -131,5 +141,9 @@ extension CharactersViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let character = viewModel.characterBy(index: indexPath.row) {
+            onCharacterCellPressed(model: character)
+        }
     }
 }

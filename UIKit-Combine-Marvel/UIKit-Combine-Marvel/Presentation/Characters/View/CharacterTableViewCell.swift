@@ -48,7 +48,7 @@ final class CharacterTableViewCell: UITableViewCell {
     // MARK: - Initializers -
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .red
+        backgroundColor = UIColor(named: "main")
         setup()
     }
     
