@@ -7,18 +7,22 @@
 
 import Foundation
 
+// MARK: - SplashViewState -
 enum SplashViewState {
     case none, loading, loaded, error
 }
 
+// MARK: - SplashViewModel -
 final class SplashViewModel: ObservableObject {
-    
+    // MARK: - Properties -
     @Published var state: SplashViewState = .none
     
+    // MARK: - Initializers -
     init() {
         checkDataStatus()
     }
     
+    // MARK: - Functions -
     func checkDataStatus() {
         state = .loading
         

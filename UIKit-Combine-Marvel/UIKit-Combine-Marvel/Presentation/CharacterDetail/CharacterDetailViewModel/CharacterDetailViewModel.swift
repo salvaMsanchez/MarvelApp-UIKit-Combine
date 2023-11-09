@@ -7,26 +7,31 @@
 
 import Foundation
 
+// MARK: - CharacterDetailViewState -
 enum CharacterDetailViewState {
     case none, loading, loaded, error
 }
 
+// MARK: - CharacterDetailViewModel -
 final class CharacterDetailViewModel: ObservableObject {
-    
+    // MARK: - Properties -
     @Published var state: CharacterDetailViewState = .none
     @Published var series: Series = []
     var seriesCount: Int {
         series.count
     }
-    var character: CharacterProperties?
+    var character: Character?
     
+    // MARK: - Use Case -
     let useCase: APIClientUseCaseProtocol
     
-    init(useCase: APIClientUseCaseProtocol = APIClientUseCase(), character: CharacterProperties) {
+    // MARK: - Initializers -
+    init(useCase: APIClientUseCaseProtocol = APIClientUseCase(), character: Character) {
         self.useCase = useCase
         self.character = character
     }
     
+    // MARK: - Functions -
     func loadSeries() {
         state = .loading
         DispatchQueue.global().async {

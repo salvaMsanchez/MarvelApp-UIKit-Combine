@@ -92,7 +92,6 @@ Siguiendo las indicaciones del citado Robert Cecil Martin, experto ingeniero de 
 # Tdo
 
 * Mejorar Modelo Character
-* Agregar MARK
 * Hacer README
 
 ---

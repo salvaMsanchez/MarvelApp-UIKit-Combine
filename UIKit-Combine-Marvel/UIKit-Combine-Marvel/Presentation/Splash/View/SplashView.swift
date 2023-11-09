@@ -8,17 +8,17 @@
 import UIKit
 import Lottie
 
+// MARK: - SplashView -
 final class SplashView: UIView {
     // MARK: - UI elements -
     public let splashAnimationView: LottieAnimationView = {
         let animation = LottieAnimationView(name: "marvelSplashAnimation")
         animation.loopMode = .loop
-//        animation.play()
         animation.translatesAutoresizingMaskIntoConstraints = false
         return animation
     }()
     
-    // MARK: - Init -
+    // MARK: - Initializers -
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor(named: "main")

@@ -7,7 +7,8 @@
 
 import Foundation
 
+// MARK: - APIClientRepositoryProtocol -
 protocol APIClientRepositoryProtocol {
-    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character
+    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> CharacterResults
     func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults
 }

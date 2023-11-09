@@ -182,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				B44587CB2AF7F09900ED2004 /* Repository */,
-				B44587CA2AF7F09400ED2004 /* Local */,
 				B44587C92AF7F08200ED2004 /* Network */,
 			);
 			path = Data;
@@ -262,13 +261,6 @@
 				B44587CF2AF8059600ED2004 /* APIClient.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		B44587CA2AF7F09400ED2004 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		B44587CB2AF7F09900ED2004 /* Repository */ = {

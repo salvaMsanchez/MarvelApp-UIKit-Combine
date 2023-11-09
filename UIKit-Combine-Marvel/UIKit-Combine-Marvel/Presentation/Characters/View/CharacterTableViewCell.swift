@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 
+// MARK: - CharacterTableViewCell -
 final class CharacterTableViewCell: UITableViewCell {
     // MARK: - Static properties -
     static let identifier = "CharacterTableViewCell"
@@ -17,7 +18,6 @@ final class CharacterTableViewCell: UITableViewCell {
     // MARK: - UI components -
     private let characterImageView: UIImageView = {
         let imageView = UIImageView()
-//        imageView.image = UIImage(named: "ironman")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -88,7 +88,7 @@ final class CharacterTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate(characterNameLabelConstraints)
     }
     
-    func configure(with model: CharacterProperties) {
+    func configure(with model: Character) {
         characterNameLabel.text = model.name
         characterImageView.kf.setImage(with: URL(string: model.thumbnail.path + ".jpg"))
     }

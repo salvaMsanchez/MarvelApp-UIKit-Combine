@@ -9,7 +9,9 @@ import UIKit
 import Combine
 import Lottie
 
+// MARK: - CharacterDetailViewController -
 final class CharacterDetailViewController: UIViewController {
+    // MARK: - Properties -
     private var subscriptions = Set<AnyCancellable>()
     var viewModel: CharacterDetailViewModel?
     
@@ -40,6 +42,7 @@ final class CharacterDetailViewController: UIViewController {
         return animation
     }()
     
+    // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -115,7 +118,7 @@ final class CharacterDetailViewController: UIViewController {
     }
 }
 
-// MARK: - CharacterDetailViewController extension -
+// MARK: - CharacterDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate -
 extension CharacterDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterDetailCollectionViewCell.identifier, for: indexPath) as? CharacterDetailCollectionViewCell else {
@@ -147,11 +150,4 @@ extension CharacterDetailViewController: UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 450)
     }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let defaultOffset = view.safeAreaInsets.top
-//        let offset = scrollView.contentOffset.y + defaultOffset
-//
-//        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
-//    }
 }

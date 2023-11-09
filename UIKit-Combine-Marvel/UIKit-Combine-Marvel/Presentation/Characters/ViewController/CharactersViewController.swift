@@ -9,8 +9,9 @@ import UIKit
 import Combine
 import Lottie
 
+// MARK: - CharactersViewController -
 final class CharactersViewController: UIViewController {
-    
+    // MARK: - Properties -
     private var subscriptions = Set<AnyCancellable>()
     private var viewModel = CharactersViewModel()
     
@@ -37,6 +38,7 @@ final class CharactersViewController: UIViewController {
         return animation
     }()
     
+    // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -110,13 +112,14 @@ final class CharactersViewController: UIViewController {
         NSLayoutConstraint.activate(charactersAnimationViewConstraints)
     }
     
-    private func onCharacterCellPressed(model: CharacterProperties) {
+    private func onCharacterCellPressed(model: Character) {
         let characterDetailViewController = CharacterDetailViewController()
         characterDetailViewController.viewModel = CharacterDetailViewModel(character: model)
         self.navigationController?.pushViewController(characterDetailViewController, animated: true)
     }
 }
 
+// MARK: - CharactersViewController: UITableViewDataSource, UITableViewDelegate -
 extension CharactersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.identifier, for: indexPath) as? CharacterTableViewCell else {

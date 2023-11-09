@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - URLResponse Extension -
 extension URLResponse {
     func getStatusCode() -> Int? {
         if let httpResponse = self as? HTTPURLResponse {

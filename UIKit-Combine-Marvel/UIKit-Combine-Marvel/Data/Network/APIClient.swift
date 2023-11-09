@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Constants -
 struct Constants {
     static let apikey = "4837bc10899562b5f7ebc30e1656c4b9"
     static let ts = "1"
@@ -14,8 +15,9 @@ struct Constants {
     static let orderBy = "-modified"
 }
 
+// MARK: - APIClientProtocol -
 protocol APIClientProtocol {
-    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character
+    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> CharacterResults
     func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults
 }
 
@@ -68,7 +70,7 @@ final class APIClient: APIClientProtocol {
     }
     
     // MARK: - Functions -
-    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character {
+    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> CharacterResults {
         var components = URLComponents()
         components.host = apiRouter.host
         components.scheme = apiRouter.scheme
@@ -102,7 +104,7 @@ final class APIClient: APIClientProtocol {
             throw APIError.noData
         }
         
-        guard let resource = try? JSONDecoder().decode(Character.self, from: data) else {
+        guard let resource = try? JSONDecoder().decode(CharacterResults.self, from: data) else {
             throw APIError.decodingFailed
         }
         
@@ -149,17 +151,3 @@ final class APIClient: APIClientProtocol {
         return resource
     }
 }
-
-// MARK: - Fake Success -
-//final class APIClientFakeSuccess: APIClientProtocol {
-//    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character {
-//        // TODO: Do
-//    }
-//}
-
-// MARK: - Fake Error -
-//final class APIClientFakeError: APIClientProtocol {
-//    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character {
-//        // TODO: Do
-//    }
-//}

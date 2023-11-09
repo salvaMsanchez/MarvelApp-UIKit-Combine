@@ -7,14 +7,18 @@
 
 import Foundation
 
+// MARK: - APIClientRepository -
 final class APIClientRepository: APIClientRepositoryProtocol {
+    // MARK: - Properties -
     private var apiClient: APIClientProtocol
     
+    // MARK: - Initializers -
     init(apiClient: APIClientProtocol = APIClient()) {
         self.apiClient = apiClient
     }
     
-    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character {
+    // MARK: - Functions -
+    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> CharacterResults {
         try await apiClient.getCharacter(by: characterName, apiRouter: .getCharacter)
     }
     

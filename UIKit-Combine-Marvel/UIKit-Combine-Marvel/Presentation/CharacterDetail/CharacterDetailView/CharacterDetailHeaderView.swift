@@ -65,7 +65,6 @@ final class CharacterDetailHeaderView: UICollectionReusableView {
         ]
         
         let headerLabelConstraints = [
-//            headerLabel.topAnchor.constraint(equalTo: headerImage.bottomAnchor, constant: 24),
             headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             headerLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
@@ -75,7 +74,7 @@ final class CharacterDetailHeaderView: UICollectionReusableView {
         NSLayoutConstraint.activate(headerLabelConstraints)
     }
     
-    func configure(with model: CharacterProperties) {
+    func configure(with model: Character) {
         headerImage.kf.setImage(with: URL(string: model.thumbnail.path + ".jpg"))
         headerLabel.text = model.description
     }

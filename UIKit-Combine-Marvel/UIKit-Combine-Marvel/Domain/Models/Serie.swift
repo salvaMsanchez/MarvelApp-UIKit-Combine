@@ -34,7 +34,7 @@ struct SerieResults: Decodable {
 }
 
 // MARK: - Thumbnail
-struct SerieThumbnail: Codable {
+struct SerieThumbnail: Decodable {
     let path: String
     let thumbnailExtension: String
 

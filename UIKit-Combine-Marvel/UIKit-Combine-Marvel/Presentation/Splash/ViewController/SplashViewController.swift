@@ -8,13 +8,14 @@
 import UIKit
 import Combine
 
+// MARK: - SplashViewController -
 final class SplashViewController: UIViewController {
-    
+    // MARK: - Properties -
     private let splashView = SplashView()
-
     private var subscriptions = Set<AnyCancellable>()
     private var viewModel = SplashViewModel()
     
+    // MARK: - Lifecycle -
     override func loadView() {
         super.loadView()
         view = splashView
