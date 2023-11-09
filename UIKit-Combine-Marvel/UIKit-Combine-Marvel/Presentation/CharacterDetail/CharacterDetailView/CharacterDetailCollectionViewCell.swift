@@ -61,11 +61,14 @@ final class CharacterDetailCollectionViewCell: UICollectionViewCell {
             serieImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             serieImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             serieImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            serieImageView.bottomAnchor.constraint(equalTo: serieNameLabel.topAnchor)
+            serieImageView.bottomAnchor.constraint(equalTo: serieNameLabel.topAnchor, constant: -8),
+            serieImageView.heightAnchor.constraint(equalToConstant: 160)
         ]
         
         let serieNameLabelConstraints = [
-            serieNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            serieNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            serieNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            serieNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ]
         
         NSLayoutConstraint.activate(serieImageViewConstraints)
@@ -73,7 +76,7 @@ final class CharacterDetailCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with model: Serie) {
-        serieImageView.kf.setImage(with: URL(string: model.thumbnail.path + "." + model.thumbnail.thumbnailExtension))
         serieNameLabel.text = model.title
+        serieImageView.kf.setImage(with: URL(string: model.thumbnail.path + "." + model.thumbnail.thumbnailExtension))
     }
 }

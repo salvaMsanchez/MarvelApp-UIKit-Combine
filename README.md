@@ -89,6 +89,12 @@ Siguiendo las indicaciones del citado Robert Cecil Martin, experto ingeniero de 
 
 * [MARVEL APP PROTOTYPE](https://dribbble.com/shots/2671572-Marvel-App/attachments/537660?mode=media)
 
+# Tdo
+
+* Mejorar Modelo Character
+* Agregar MARK
+* Hacer README
+
 ---
 
 [Subir ⬆️](#top)

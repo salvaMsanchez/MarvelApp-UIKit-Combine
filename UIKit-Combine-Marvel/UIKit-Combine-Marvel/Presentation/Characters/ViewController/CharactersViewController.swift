@@ -19,6 +19,7 @@ final class CharactersViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = UIColor(named: "main")
         tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: CharacterTableViewCell.identifier)
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     
@@ -112,11 +113,7 @@ final class CharactersViewController: UIViewController {
     private func onCharacterCellPressed(model: CharacterProperties) {
         let characterDetailViewController = CharacterDetailViewController()
         characterDetailViewController.viewModel = CharacterDetailViewModel(character: model)
-        DispatchQueue.global().asyncAfter(deadline: .now() + .milliseconds(200)) { [weak self] in
-            DispatchQueue.main.async {
-                self?.navigationController?.pushViewController(characterDetailViewController, animated: true)
-            }
-        }
+        self.navigationController?.pushViewController(characterDetailViewController, animated: true)
     }
 }
 

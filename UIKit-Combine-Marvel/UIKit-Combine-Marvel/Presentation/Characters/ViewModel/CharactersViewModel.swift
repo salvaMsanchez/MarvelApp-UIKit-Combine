@@ -15,11 +15,14 @@ final class CharactersViewModel: ObservableObject {
     
     let listCharacters: [String] = ["Iron Man",
                                     "Hulk",
-                                    "Doctor Strange",
+                                    "Wolverine",
                                     "Thor",
                                     "Spider-Man (Peter Parker)",
-                                    "Spider-Girl (May Parker)",
-                                    "Captain America"]
+                                    "Avengers",
+                                    "Captain America",
+                                    "Guardians of the Galaxy",
+                                    "Wonder Man",
+                                    "X-Men"]
     @Published var state: CharactersViewState = .none
     @Published var characters: [CharacterProperties] = []
     var charactersCount: Int {

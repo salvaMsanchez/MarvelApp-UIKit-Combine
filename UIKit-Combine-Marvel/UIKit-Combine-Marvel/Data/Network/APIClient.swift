@@ -119,9 +119,10 @@ final class APIClient: APIClientProtocol {
         let apiKeyItem = URLQueryItem(name: "apikey", value: Constants.apikey)
         let tsItem = URLQueryItem(name: "ts", value: Constants.ts)
         let hashItem = URLQueryItem(name: "hash", value: Constants.hash)
+        let limitItem = URLQueryItem(name: "limit", value: "50")
 
         // Agrega los parámetros a la URL
-        components.queryItems = [apiKeyItem, tsItem, hashItem]
+        components.queryItems = [apiKeyItem, tsItem, hashItem, limitItem]
         
         guard let url = components.url else {
             throw APIError.malformedUrl

@@ -39,8 +39,8 @@ final class CharacterDetailViewModel: ObservableObject {
                         return
                     }
                     let series = seriesResults.series.filter { $0.description != nil }
+                    
                     self?.series = series
-                    print(self?.series)
                     self?.state = .loaded
                 } catch {
                     print(error)

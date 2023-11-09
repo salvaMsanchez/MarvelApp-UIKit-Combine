@@ -16,13 +16,13 @@ final class CharacterDetailViewController: UIViewController {
     // MARK: - UI elements -
     private let characterDetailCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 117, height: 180)
+        layout.itemSize = CGSize(width: 120, height: 186)
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor(named: "mainBackgroundColor")
         collectionView.register(CharacterDetailCollectionViewCell.self, forCellWithReuseIdentifier: CharacterDetailCollectionViewCell.identifier)
         collectionView.register(CharacterDetailHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CharacterDetailHeaderView.identifier)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
     
@@ -57,19 +57,19 @@ final class CharacterDetailViewController: UIViewController {
         
         viewModel?.$state
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { data in
+            .sink(receiveValue: { [weak self] data in
                 switch data {
                     case .none:
                         print("Characters Estado .none")
                     case .loading:
                         print("Characters Estado .loading")
-                        self.characterDetailAnimationView.play()
+                        self?.characterDetailAnimationView.play()
                     case .loaded:
                         print("Characters Estado .loaded")
-                        self.characterDetailCollectionView.reloadData()
-                        self.characterDetailAnimationView.isHidden = true
-                        self.activityIndicatorDetailUiView.isHidden = true
-                        self.characterDetailAnimationView.stop()
+                        self?.characterDetailCollectionView.reloadData()
+                        self?.characterDetailAnimationView.isHidden = true
+                        self?.activityIndicatorDetailUiView.isHidden = true
+                        self?.characterDetailAnimationView.stop()
                     case .error:
                         print("Characters Estado .error")
                 }
@@ -145,7 +145,7 @@ extension CharacterDetailViewController: UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 415)
+        return CGSize(width: view.frame.width, height: 450)
     }
     
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {

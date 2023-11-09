@@ -23,8 +23,7 @@ final class CharacterDetailHeaderView: UICollectionReusableView {
     
     private let headerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = .white
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -61,14 +60,15 @@ final class CharacterDetailHeaderView: UICollectionReusableView {
             headerImage.topAnchor.constraint(equalTo: topAnchor),
             headerImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             headerImage.trailingAnchor.constraint(equalTo: trailingAnchor),
-            headerImage.bottomAnchor.constraint(equalTo: headerLabel.topAnchor, constant: -24),
-            headerImage.heightAnchor.constraint(equalToConstant: 150)
+            headerImage.bottomAnchor.constraint(equalTo: headerLabel.topAnchor, constant: -16),
+            headerImage.heightAnchor.constraint(equalToConstant: 300)
         ]
         
         let headerLabelConstraints = [
 //            headerLabel.topAnchor.constraint(equalTo: headerImage.bottomAnchor, constant: 24),
             headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            headerLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
         ]
         
         NSLayoutConstraint.activate(headerImageConstraints)
