@@ -68,10 +68,24 @@ Según [uncle Bob's Clean Architecture pattern](https://blog.cleancoder.com/uncl
 * *Data*: todo el código que interactúa con los repositorios (como llamadas a red, llamadas a la base de datos, valores predeterminados de usuario, etc.).
 * *Domain*: todos los modelos de datos.
 
-Siguiendo las indicaciones del citado Robert Cecil Martin, experto ingeniero de *software*, y guiado por MVVM, he construido mi código.
+Además de seguir las indicaciones del citado Robert Cecil Martin, experto ingeniero de *software*, he concretdo la organización de mi código como se observa en la siguiente imagen:
+
+![Demo app gif](images/diagramaMVVM.png)
+
+De esta forma, conseguimos:
+
+* **Separación de responsabilidades:** esto facilita la resolución de numerosos problemas de desarrollo y hace que una aplicación sea más fácil de probar, mantener y evolucionar.
+* **Reducción de la lógica de negocio:** se reduce la cantidad de lógica de negocio requerida en el código detrás de ella.
+* **Facilita las pruebas unitarias:** aunque en este caso no se han añadido *tests*, realizar la arquitectura como se indica facilita la inyección de dependencias con casos *fake*, por ejemplo. Incluso nos podría servir para diseñar nuestras pantallas sin realizar llamadas a la API.
+* **Independencia de componentes:** se trabajar de forma independiente y simultánea en los componentes durante el desarrollo.
+* **Reutilización de código:** mantiene una separación limpia entre la lógica de la aplicación y la UI, lo que puede mejorar significativamente las oportunidades de reutilización de código.
+
+Debemos destacar el rol del *respository*, el cual es el responsable de manejar las operaciones de datos. Puede interactuar con diferentes fuentes de datos como “Local” (CoreData, por ejemplo) o “Network” (API, por ejemplo).
 
 <a name="diseno"></a>
 ### Diseño
+
+Como inspiración, he partido del **[concepto creativo y prototipo](https://dribbble.com/shots/2671572-Marvel-App/attachments/537660?mode=media)** del usuario llamado [Luis Herrero](https://dribbble.com/luisherrero) encontrado en la web [Dribbble](https://dribbble.com/shots/22234085-Dragon-Ball-Z-Character-Info), punto de partida que me ha ayudado para comenzar este proyecto.
 
 <a name="problemas"></a>
 ### Problemas, decisiones y resolución
@@ -91,7 +105,6 @@ Siguiendo las indicaciones del citado Robert Cecil Martin, experto ingeniero de 
 
 # Tdo
 
-* Mejorar Modelo Character
 * Hacer README
 
 ---

@@ -59,10 +59,8 @@ final class CharactersViewController: UIViewController {
                         case .none:
                             print("Characters Estado .none")
                         case .loading:
-                            print("Characters Estado .loading")
                             self?.charactersAnimationView.play()
                         case .loaded:
-                            print("Characters Estado .loaded")
                             self?.charactersTableView.reloadData()
                             self?.charactersAnimationView.isHidden = true
                             self?.activityIndicatorUiView.isHidden = true

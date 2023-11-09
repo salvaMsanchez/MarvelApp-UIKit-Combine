@@ -31,10 +31,8 @@ final class SplashViewController: UIViewController {
                         case .none:
                             print("Estado Splash .none")
                         case .loading:
-                            print("Estado Splash .loading")
                             self?.splashView.splashAnimationView.play()
                         case .loaded:
-                            print("Estado Splash .loaded")
                             self?.splashView.splashAnimationView.stop()
                             let charactersViewController = CharactersViewController()
                             self?.navigationController?.setViewControllers([charactersViewController], animated: true)
