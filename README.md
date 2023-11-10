@@ -51,6 +51,10 @@
   
 </p>
 
+* **iOS:** 16
+* **Swift:** 5.9
+* **Xcode:** 14.3.1
+
 <a name="proyecto"></a>
 ## Proyecto: Marvel App 🦸🏻‍♂️ UIKit + Combine
 
