@@ -79,10 +79,10 @@ De esta forma, conseguimos:
 * **Separación de responsabilidades:** esto facilita la resolución de numerosos problemas de desarrollo y hace que una aplicación sea más fácil de probar, mantener y evolucionar.
 * **Reducción de la lógica de negocio:** se reduce la cantidad de lógica de negocio requerida en el código detrás de ella.
 * **Facilita las pruebas unitarias:** aunque en este caso no se han añadido *tests*, realizar la arquitectura como se indica facilita la inyección de dependencias con casos *fake*, por ejemplo. Incluso nos podría servir para diseñar nuestras pantallas sin realizar llamadas a la API.
-* **Independencia de componentes:** se trabajar de forma independiente y simultánea en los componentes durante el desarrollo.
+* **Independencia de componentes:** permite trabajar de forma independiente y simultánea en los componentes durante el desarrollo.
 * **Reutilización de código:** mantiene una separación limpia entre la lógica de la aplicación y la UI, lo que puede mejorar significativamente las oportunidades de reutilización de código.
 
-Debemos destacar el rol del *respository*, el cual es el responsable de manejar las operaciones de datos. Puede interactuar con diferentes fuentes de datos como “Local” (CoreData, por ejemplo) o “Network” (API, por ejemplo).
+Debemos destacar el rol del ***respository***, el cual es el responsable de manejar las operaciones de datos. Puede interactuar con diferentes fuentes de datos como “Local” (CoreData, por ejemplo) o “Network” (API, por ejemplo) sin que las capas superiores sepan qué está sucediendo.
 
 <a name="diseno"></a>
 ### Diseño
