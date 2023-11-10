@@ -1,7 +1,7 @@
 <a name="top"></a>
 
 <h1 align="center">
-  <strong><span>Marvel App - UIKit + Combine</span></strong>
+  <strong><span>Marvel App 🦸🏻‍♂️ UIKit + Combine</span></strong>
 </h1>
 
 ---
@@ -25,12 +25,12 @@
 ## Índice
  
 * [Herramientas](#herramientas)
-* [Proyecto: Marvel App - UIKit + Combine](#proyecto)
+* [Proyecto: Marvel App 🦸🏻‍♂️ UIKit + Combine](#proyecto)
 	* [Descripción](#descripcion)
 	* [Arquitectura](#arquitectura)
 	* [Diseño](#diseno) 
-	* [Problemas, decisiones y resolución](#problemas)
-	* [Algunos aspectos en los que seguir mejorando la aplicación](#mejoras)
+	* [Programación reactiva con Combine](#combine)
+	* [Gestión asíncrona con `async/await`](#asincrono)
 
 <a name="herramientas"></a>
 ## Herramientas
@@ -52,7 +52,7 @@
 </p>
 
 <a name="proyecto"></a>
-## Proyecto: Marvel App - UIKit + Combine
+## Proyecto: Marvel App 🦸🏻‍♂️ UIKit + Combine
 
 ![Demo app gif](images/demoApp.gif)
 
@@ -87,25 +87,15 @@ Debemos destacar el rol del *respository*, el cual es el responsable de manejar 
 
 Como inspiración, he partido del **[concepto creativo y prototipo](https://dribbble.com/shots/2671572-Marvel-App/attachments/537660?mode=media)** del usuario llamado [Luis Herrero](https://dribbble.com/luisherrero) encontrado en la web [Dribbble](https://dribbble.com/shots/22234085-Dragon-Ball-Z-Character-Info), punto de partida que me ha ayudado para comenzar este proyecto.
 
-<a name="problemas"></a>
-### Problemas, decisiones y resolución
+<a name="combine"></a>
+### Programación reactiva con Combine
 
-<a name="mejoras"></a>
-# Algunos aspectos en los que seguir mejorando la aplicación
+He empleado el *framework* **Combine** para gestionar flujos de datos asíncronos y eventos en la aplicación. Combine **facilita la composición y gestión de secuencias de eventos**, proporcionando operadores para transformar, combinar y manipular datos de manera declarativa. Este enfoque funcional **simplifica la lógica de manejo de eventos** y permite una **programación reactiva más eficiente**.
 
+<a name="asincrono"></a>
+### Gestión asíncrona con `async/await`
 
-* Hablar sobre las nestedContainer en el modelo
-* Hbalar sobre combine en UIkit y escucha de estados
-* Hbalar sobre la aplicación del repositorio y el caso de uso para la llamada a la API
-
-
-# Inspiración
-
-* [MARVEL APP PROTOTYPE](https://dribbble.com/shots/2671572-Marvel-App/attachments/537660?mode=media)
-
-# Tdo
-
-* Hacer README
+Se han implementado llamadas asíncronas utilizando las funciones `async` y `await`. Esta característica, introducida en ***Swift 5.5***, me ha posibilitado **simplificar la escritura** de código asíncrono al permitir que las funciones asíncronas se vean y se utilicen de manera similar a las funciones síncronas. Además, al emplear `async/await`, las operaciones asíncronas se desarrollan de manera más clara y concisa, mejorando la legibilidad del código.
 
 ---
 
