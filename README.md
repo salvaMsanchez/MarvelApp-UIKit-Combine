@@ -59,6 +59,8 @@
 <a name="descripcion"></a>
 ### Descripción
 
+Pequeña aplicación iOS para poner en práctica programación reactiva con el *framework* **Combine**; llamadas asíncronas a *[The Marvel Comics API](https://developer.marvel.com)* con **`async/await`**; el uso del patrón de diseño **MVVM** empleando casos de uso conectados con un repositorio (como explico en la sección de [Arquitectura](#arquitectura)) en pos de crear un sistema de *software* escalable, mantenible y testable (arquitectura **CLEAN**); y el acoplamiento de todo lo anterior con el pertinente desarrollo en **UIKit**.
+
 <a name="arquitectura"></a>
 ### Arquitectura
 

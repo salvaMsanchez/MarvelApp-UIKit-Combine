@@ -21,7 +21,7 @@ final class CharacterDetailViewController: UIViewController {
         layout.itemSize = CGSize(width: 120, height: 186)
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor(named: "mainBackgroundColor")
+        collectionView.backgroundColor = UIColor(named: "main")
         collectionView.register(CharacterDetailCollectionViewCell.self, forCellWithReuseIdentifier: CharacterDetailCollectionViewCell.identifier)
         collectionView.register(CharacterDetailHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CharacterDetailHeaderView.identifier)
         collectionView.showsVerticalScrollIndicator = false
